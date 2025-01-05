@@ -108,7 +108,7 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
             type=sha
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         continue-on-error: false
         with:
           load: true
@@ -127,7 +127,7 @@ jobs:
         continue-on-error: false
         run: |
           docker run --rm "${{ env.image_name }}:${{ env.image_tag }}" bash --version
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         continue-on-error: false
         with:
           load: true
